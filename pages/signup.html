@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+
+    <header>
+        <h1>Sign Up</h1>
+    </header>
+    <form id="sign-up">
+    <div class="container">
+        <div class="labels">
+        <label for="username" >Username :</label>
+        <input type="text" placeholder="username" id="username" required>
+        </div>
+        <div class="labels">
+        <label for="email">Email :</label>
+        <input type="email" placeholder="user@gmail.com" id="email" required>
+        </div>
+                <div class="labels">
+        <label for="password">Password :</label>
+        <input type="password" placeholder="1234" id="password" required>
+        </div>
+        <div class="labels">
+        <button>Sign Up</button>
+        </div>
+    </div>
+    </form>
+    <style>
+        .labels{
+            display: flex;
+            gap : 10px;
+            padding : 10px;
+        }
+        button{
+           margin-left : 90px;
+        }
+    </style>
+    <script src="main.js"></script>
+</body>
+</html>
