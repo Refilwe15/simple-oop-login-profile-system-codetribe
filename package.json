@@ -1,0 +1,24 @@
+{
+  "name": "simple-oop-login-profile-system-codetribe",
+  "version": "1.0.0",
+  "description": "npm install  \r npm start  \r Visit: http://localhost:3000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Refilwe15/simple-oop-login-profile-system-codetribe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Refilwe15/simple-oop-login-profile-system-codetribe/issues"
+  },
+  "homepage": "https://github.com/Refilwe15/simple-oop-login-profile-system-codetribe#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "sqlite3": "^5.1.7"
+  }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+  <h1>Sign In</h1>
+  <form id="sign-in">
+    <label>Username: <input type="text" id="username" required></label><br>
+    <label>Password: <input type="password" id="password" required></label><br>
+    <button type="submit">Login</button>
+  </form>
+  <p>Don’t have an account? <a href="signup.html">Sign Up</a></p>
+
+  <!-- ✅ main.js lives in /pages -->
+  <script src="main.js"></script>
+  <script>
+    const signIn = document.getElementById("sign-in");
+    if (signIn) {
+      signIn.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value;
+        const result = await auth.login(username, password);
+        if (result.ok) {
+          // ✅ profile.html is inside /pages
+          window.location.href = "profile.html";
+        } else {
+          alert("Login Failed!");
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+</head>
+<body>
+  <h1>Create Account</h1>
+  <form id="sign-up">
+    <label>Username: <input type="text" id="username" required></label><br>
+    <label>Email: <input type="email" id="email" required></label><br>
+    <label>Password: <input type="password" id="password" required></label><br>
+    <button type="submit">Sign Up</button>
+  </form>
+  <p>Already have an account? <a href="index.html">Sign In</a></p>
+
+  <!-- ✅ main.js lives in /pages -->
+  <script src="main.js"></script>
+  <script>
+    const signUp = document.getElementById("sign-up");
+    if (signUp) {
+      signUp.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const username = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const result = await auth.signup(username, email, password);
+        if (result.ok) {
+          alert("Account Created!");
+          window.location.href = "index.html";
+        } else {
+          alert("Signup failed: " + (result.error || ""));
+        }
+      });
+    }
+  </script>
+</body>
+</html>
