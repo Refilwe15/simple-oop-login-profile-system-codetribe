@@ -81,7 +81,7 @@ app.post("/api/login", (req, res) => {
 
 // Logout route
 app.post("/api/logout", (req, res) => {
-  console.log("👋 User logged out:", currentUser?.username || "unknown");
+  console.log("git User logged out:", currentUser?.username || "unknown");
   currentUser = null;
   res.json({ ok: true });
 });
