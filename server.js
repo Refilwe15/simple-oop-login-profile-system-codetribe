@@ -96,5 +96,5 @@ app.get("/api/profile", (req, res) => {
 
 // ---------- START SERVER ----------
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+  console.log(` Server running at http://localhost:${PORT}`);
 });
