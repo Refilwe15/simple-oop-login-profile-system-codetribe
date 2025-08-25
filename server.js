@@ -16,9 +16,9 @@ app.use(express.static(path.join(__dirname, "public")));
 // SQLite database setup
 const db = new sqlite3.Database("./database.db", (err) => {
   if (err) {
-    console.error("❌ Error opening database:", err.message);
+    console.error("Error opening database:", err.message);
   } else {
-    console.log("✅ Connected to SQLite database.");
+    console.log("Connected to SQLite database.");
     db.run(
       `CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -30,7 +30,7 @@ const db = new sqlite3.Database("./database.db", (err) => {
   }
 });
 
-// Temporary in-memory session
+
 let currentUser = null;
 
 // ---------- ROUTES ----------
@@ -48,10 +48,10 @@ app.post("/api/signup", (req, res) => {
     [username, email, password],
     function (err) {
       if (err) {
-        console.error("❌ Signup error:", err.message);
+        console.error("Signup error:", err.message);
         return res.json({ ok: false, error: err.message });
       }
-      console.log("✅ User registered:", username);
+      console.log("User registered:", username);
       res.json({ ok: true });
     }
   );
@@ -65,7 +65,7 @@ app.post("/api/login", (req, res) => {
     [username, password],
     (err, row) => {
       if (err || !row) {
-        console.error("❌ Login failed:", err ? err.message : "No match");
+        console.error("Login failed:", err ? err.message : "No match");
         return res.status(401).json({ ok: false });
       }
       currentUser = {
@@ -73,7 +73,7 @@ app.post("/api/login", (req, res) => {
         isLogged: true,
         time: new Date().toISOString(),
       };
-      console.log("✅ Login success:", username);
+      console.log("Login success:", username);
       res.json({ ok: true });
     }
   );
